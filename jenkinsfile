@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'maven3.6.3'
+    }
+
+    stages {
+        stage('clean') {
+            steps {
+                sh 'mvn -B clean'
+            }
+        }
+        stage('compile') {
+            steps {
+                sh 'mvn -B compile'
+            }
+        }
+        stage('package') {
+            steps {
+                sh 'mvn -B package'
+            }
+        }
+    }
+}
