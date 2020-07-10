@@ -5,6 +5,10 @@ pipeline {
         maven 'maven3.6.3'
     }
 
+   envirenment{
+	PATH= "C:\Program Files\Java\jdk1.8.0_251\bin:$PATH"
+	}
+	
     stages {
         stage('clean') {
             steps {
