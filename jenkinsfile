@@ -1,29 +1,17 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'maven3.6.3'
-    }
-
-   environment{
-	PATH = "C:/Program Files/Java/jdk1.8.0_251/bin:$PATH"
-	}
-	
-    stages {
+   stages {
         stage('clean') {
             steps {
-                sh 'mvn -B clean'
+                bat 'mvn -B clean'
             }
         }
         stage('compile') {
             steps {
-                sh 'mvn -B compile'
+                bat  'mvn -B compile'
             }
         }
-        stage('package') {
-            steps {
-                sh 'mvn -B package'
-            }
-        }
+        
     }
 }
